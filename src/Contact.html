@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="aze">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZE - Plant the Future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@300;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+    <style>
+         body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Contact.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <p class="name">Yaşıl Azərbaycan</p>
+            <p class="slogan">"Gələcəyin yaşıllığına, bu günün addımları ilə!"</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a onclick="newpage('Main_Page.html')">Ana Səhifə</a></li>
+            <li><a onclick="newpage('climate_changeing.html')">İqlim Dəyişikliyi</a></li>
+            <li><a onclick="newpage('Affort.html')">Təşəbbüs</a></li>
+            <li><a onclick="newpage('Information_map.html')">Məlumat Xəritəsi</a></li>
+            <li><a onclick="newpage('Contact.html')">Bizimlə Əlaqə</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="cta">
+            <p class="Plant">Bizimlə Əlaqə</p>
+            <p class="nurturing">Əsas məqsədimiz sizinlə davamlı ünsiyyət qurmaq və hər bir iştirakçını dəyərləndirməkdir.</p> 
+        </div>
+        <div class="main-section">
+            <h2>Əsas Əlaqə Məlumatları</h2>
+            <p>
+                <h3>Telefon:</h3><br>
+                - (+994) 50 123 45 67 <br> 
+                - (+994) 55 765 43 21                 
+            </p>
+            <p>
+                <h3>E-poçt Ünvanı:</h3><br>
+                - info@yasilazerbaycan.az  <br>
+                - destek@yasilazerbaycan.az                               
+            </p>
+            <p>
+                <h3>Əlaqə Saatları:</h3><br>
+                - Bazar ertəsi - Cümə: 09:00 - 18:00  <br>
+                - Şənbə: 10:00 - 14:00  <br>
+                - Bazar günü: Qapalıdır   
+            </p>
+            <p>
+                <h3>Ofis Ünvanı:</h3><br>
+                - Azərbaycan Respublikası, Bakı şəhəri, Neftçilər prospekti, 123A  
+  
+            </p>
+
+        </div>
+        <div class="cta">
+            <p class="Plantlittle">Sosial Media Hesablarımız:</p>
+        </div>
+        <div class="main-section">
+            <p>
+                <h3>Facebook:</h3><br>
+                [facebook.com/yasilazerbaycan](https://facebook.com/yasilazerbaycan)                
+            </p>
+            <p>
+                <h3>Instagram:</h3><br>
+                [instagram.com/yasilazerbaycan](https://instagram.com/yasilazerbaycan)                              
+            </p>
+            <p>
+                <h3>Twitter:</h3><br>
+                [twitter.com/yasil_az](https://twitter.com/yasil_az)  
+            </p>
+            <p>
+                <h3>LinkedIn:</h3><br>
+                [linkedin.com/company/yasilazerbaycan](https://linkedin.com/company/yasilazerbaycan)  
+
+            </p>
+
+        </div>
+        <div class="cta">
+            <p class="Plantlittle">Sosial Media Hesablarımız:</p>
+        </div>
+        <div class="main-section">
+            <p>
+                <h3>Xüsusi Suallar Üçün:</h3><br>
+                <p><h4>Layihə Rəhbəri:Kanan Abbasov</h4> <br>
+                    - Telefon: (+994) 50 789 65 43  <br>
+                    - E-poçt: aysel.mammadova@yasilazerbaycan.az                   
+                </p> 
+                <p><h4>Developer: Ravan Asgarov</h4> <br>
+                    - Telefon: (+994) 50 789 65 43  <br>
+                    - E-poçt: aysel.mammadova@yasilazerbaycan.az                   
+                </p>             
+            </p> 
+        </div> 
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AZE. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        let lastScrollY = window.scrollY;
+
+        function handleScroll() {
+            const currentScrollY = window.scrollY;
+            const elements = document.querySelectorAll('header, nav, .main-section, .cta, footer');
+
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    if (currentScrollY > lastScrollY) {
+                        // Scrolling Down
+                        element.classList.add('visible-down');
+                        element.classList.remove('hidden');
+                    } else {
+                        // Scrolling Up
+                        element.classList.add('visible-up');
+                        element.classList.remove('hidden');
+                    }
+                } else {
+                    // If the element is out of view, hide it
+                    element.classList.add('hidden');
+                    element.classList.remove('visible-down', 'visible-up');
+                }
+            });
+
+            lastScrollY = currentScrollY;
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+        
+    </script>
+</body>
+</html>

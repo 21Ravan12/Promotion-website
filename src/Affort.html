@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="aze">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZE - Plant the Future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@300;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+    <style>
+    body {
+   margin: 0;
+   font-family: 'Roboto', sans-serif;
+   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Affort.jpg') no-repeat center center fixed;
+   background-size: cover;
+   color: white;
+       }
+   </style>
+</head>
+<body>
+    <header>
+        <div>
+            <p class="name">Yaşıl Azərbaycan</p>
+            <p class="slogan">"Gələcəyin yaşıllığına, bu günün addımları ilə!"</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a onclick="newpage('Main_Page.html')">Ana Səhifə</a></li>
+            <li><a onclick="newpage('climate_changeing.html')">İqlim Dəyişikliyi</a></li>
+            <li><a onclick="newpage('Affort.html')">Təşəbbüs</a></li>
+            <li><a onclick="newpage('Information_map.html')">Məlumat Xəritəsi</a></li>
+            <li><a onclick="newpage('Contact.html')">Bizimlə Əlaqə</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="cta">
+            <p class="Plant"> Yaşıl Azərbaycanın Qurulması</p>
+          
+        </div>
+
+        <div class="main-section">
+            <h2>Ağacəkmə Niyə Vacibdir?</h2>
+            <p>İqlim dəyişikliyi ilə mübarizənin ən təsirli yollarından biri ağac əkməkdir. Ağaclar karbon qazını (CO₂) udaraq havanın keyfiyyətini yaxşılaşdırır, torpağı eroziyadan qoruyur və təbii ekosistemlərin sabitliyini təmin edir.  
+                Azərbaycanın mövcud vəziyyətini nəzərə alaraq, ağacəkmə tədbirləri ətraf mühitin yaxşılaşdırılması üçün vacibdir. Meşə ərazilərinin yalnız *11%-ə bərabər olması*, bu təşəbbüsün önəmini artırır.  
+                </p>
+        </div>
+
+        <div class="cta">
+            <p class="Plantlittle">Ağac Əkməyin Faydaları</p>
+        </div>
+        <div class="main-section">
+            <h2>Karbon İzinin Azaldılması:</h2>
+            <p> - Ağaclar ildə *22 kiloqram karbon qazını udaraq* qlobal istiləşməni yavaşlatmağa kömək edir.  
+            </p>
+        </div>
+        <div class="main-section">
+            <h2>Ekoloji Balansın Yaxşılaşdırılması:</h2>
+            <p>- Hər bir ağac *3 nəfərin illik oksigen tələbatını* təmin edə bilər.  
+            </p>
+        </div>
+        <div class="main-section">
+            <h2>Təbiətə Dəstək:</h2>
+            <p> - Yeni əkilən ağaclar heyvanların sığınacaq tapmasına, torpağın münbitliyinin artırılmasına və eroziyanın qarşısının alınmasına kömək edir.  
+             </p>
+        </div>
+        <div class="main-section">
+            <h2>İqlim Dəyişikliklərinə Qarşı Qoruma</h2>
+            <p> - Kür və Araz hövzəsi ətrafında əkilən ağaclar su səviyyəsinin tənzimlənməsinə kömək edə bilər.  
+            </p>
+        </div>
+        
+        <div class="cta">
+            <p class="Plant">Ağac Əkməyə Necə Dəstək Verə Bilərsiniz?</p>
+            <p class="nurturing">Biz, hər bir vətəndaşı bu təşəbbüsə qoşulmağa dəvət edirik. 
+                Əkilən hər ağac, Azərbaycanın iqlimə uyğunlaşmasına və gələcək nəsillər üçün yaşıl 
+                bir mühitin yaradılmasına kömək edəcəkdir. *Siz də bu prosesdə iştirak edə bilərsiniz!* 
+            </p>
+        </div>
+        <div class="main-section">
+            <h2>Sorğu Forması</h2>
+            <p>Ağacəkmə təşəbbüsünə qoşulmaq üçün aşağıdakı məlumatları təqdim edin. Bu məlumatlar əsasında sizinlə əlaqə saxlanılacaq və iştirakınız təsdiqlənəcəkdir.
+            </p>
+        </div>
+        <div class="main-section">
+           <h2> Bir Ağac, Bir Gələcək</h2>
+        <div class="form-container" id="form-container">
+            <form action="#" method="post" id="signin-form">
+                <label for="name">Ad:</label>
+                <input type="text" id="name" name="name" placeholder="Adınızı daxil edin" required><br>
+
+                <label for="surname">Soyad:</label>
+                <input type="text" id="surname" name="surname" placeholder="Soyadınızı daxil edin" required><br>
+
+                <label for="phone">Əlaqə Nömrəsi:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Nömrənizi daxil edin" required><br>
+
+                <label for="email">E-Poşt:</label>
+                <input type="email" id="email" name="email" placeholder="E-poştunuzu daxil edin"><br>
+
+                <label for="tree">Seçmə istədiyiniz ağac növü:</label>
+                <select id="tree" name="tree" required>
+                    <option value="palid">Palıd</option>
+                    <option value="xurma">Xurma</option>
+                    <option value="göyrəş">Göyrəş</option>
+                    <option value="diger">Digər</option>
+                </select><br>
+
+                <label for="region">Əkimin Coğrafi Bölgəsi:</label>
+                <select id="region" name="region" required>
+                    <option value="kulof">Çülöf Səhəsi</option>
+                    <option value="karabag">Qarabağ</option>
+                    <option value="baki">İri Bakı Ərazisi</option>
+                    <option value="diger">Digər</option>
+                </select><br>
+
+                <label for="donation">İanə Məblağı:</label>
+                <select id="donation" name="donation" required>
+                    <option value="10">10 Manat</option>
+                    <option value="20">20 Manat</option>
+                    <option value="50">50 Manat</option>
+                    <option value="diger">Digər</option>
+                </select><br>
+
+                <label for="suggestions">Təkliflər/Qeyd:</label>
+                <textarea id="suggestions" name="suggestions" placeholder="Təklif və ya qeydinizi daxil edin"></textarea>
+<br>
+                <button type="submit">Daxil Et</button>
+            </form>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AZE. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        let lastScrollY = window.scrollY;
+
+        function handleSubmit(){
+            const formContainer = document.getElementById('form-container');
+            formContainer.innerHTML = ''; 
+
+            const successMessage = document.createElement('div');
+            successMessage.classList.add('success-message');
+            successMessage.innerText = 'Formunuz uğurla göndərildi!';
+
+            formContainer.appendChild(successMessage);
+        }
+
+        function handleScroll() {
+            const currentScrollY = window.scrollY;
+            const elements = document.querySelectorAll('header, nav, .main-section, .cta, footer');
+
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    if (currentScrollY > lastScrollY) {
+                        element.classList.add('visible-down');
+                        element.classList.remove('hidden');
+                    } else {
+                        element.classList.add('visible-up');
+                        element.classList.remove('hidden');
+                    }
+                } else {
+                    element.classList.add('hidden');
+                    element.classList.remove('visible-down', 'visible-up');
+                }
+            });
+
+            lastScrollY = currentScrollY;
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+
+        document.getElementById('signin-form').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const formData = {
+                name: document.getElementById('name').value,
+                surname: document.getElementById('surname').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                tree: document.getElementById('tree').value,
+                region: document.getElementById('region').value,
+                donation: document.getElementById('donation').value,
+                suggestions: document.getElementById('suggestions').value
+            };
+
+            fetch('http://127.0.0.1:5000/api', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                handleSubmit(); // Show success message after form submission
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred!');
+            });
+        });
+    </script>
+</body>
+</html>

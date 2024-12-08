@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Sign In</title>
+    <style>
+        .success-message {
+            color: green;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .visible-down {
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+
+        .visible-up {
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Sign In</h1>
+    <div id="form-container">
+        <form id="signin-form">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="surname">Surname:</label><br>
+            <input type="text" id="surname" name="surname" required><br><br>
+
+            <label for="phone">Phone:</label><br>
+            <input type="text" id="phone" name="phone" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="tree">Tree:</label><br>
+            <input type="text" id="tree" name="tree" required><br><br>
+
+            <label for="region">Region:</label><br>
+            <input type="text" id="region" name="region" required><br><br>
+
+            <label for="donation">Donation:</label><br>
+            <input type="text" id="donation" name="donation" required><br><br>
+
+            <label for="suggestions">Suggestions:</label><br>
+            <textarea id="suggestions" name="suggestions"></textarea><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        let lastScrollY = window.scrollY;
+
+        function handleSubmit(){
+            const formContainer = document.getElementById('form-container');
+            formContainer.innerHTML = ''; 
+
+            const successMessage = document.createElement('div');
+            successMessage.classList.add('success-message');
+            successMessage.innerText = 'Formunuz uğurla göndərildi!';
+
+            formContainer.appendChild(successMessage);
+        }
+
+        function handleScroll() {
+            const currentScrollY = window.scrollY;
+            const elements = document.querySelectorAll('header, nav, .main-section, .cta, footer');
+
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    if (currentScrollY > lastScrollY) {
+                        element.classList.add('visible-down');
+                        element.classList.remove('hidden');
+                    } else {
+                        element.classList.add('visible-up');
+                        element.classList.remove('hidden');
+                    }
+                } else {
+                    element.classList.add('hidden');
+                    element.classList.remove('visible-down', 'visible-up');
+                }
+            });
+
+            lastScrollY = currentScrollY;
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+
+        document.getElementById('signin-form').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const formData = {
+                name: document.getElementById('name').value,
+                surname: document.getElementById('surname').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                tree: document.getElementById('tree').value,
+                region: document.getElementById('region').value,
+                donation: document.getElementById('donation').value,
+                suggestions: document.getElementById('suggestions').value
+            };
+
+            fetch('http://127.0.0.1:5000/api', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                handleSubmit(); // Show success message after form submission
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred!');
+            });
+        });
+    </script>
+</body>
+</html>
